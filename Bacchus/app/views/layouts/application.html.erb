@@ -9,6 +9,25 @@
   </head>
 
   <body>
-    <%= yield %>
+   <% unless current_page?(controller: 'home', action: 'index') %> 
+    <div class="navbar-fixed">
+        <nav>
+          <div class="nav-wrapper">
+            <a href="#!" class="brand-logo left">Bacchus</a>
+            <ul class="right">
+              <li><a href="/events"><i class="material-icons">dashboard</i></a></li>
+              <li><a href="#"><i class="material-icons">more_vert</i></a></li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+    <% end %>
+
+      </main>
+        <%= yield %>
+      </main>
+
+      <footer>
+      </footer>
   </body>
 </html>
